@@ -14,7 +14,7 @@ if (contactForm) {
         body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Unable to send enquiry.");
+      if (!response.ok) throw new Error(result.error || result.message || "Unable to send enquiry.");
       contactForm.reset();
       alert("Thank you. Your enquiry has been sent successfully.");
     } catch (error) {
