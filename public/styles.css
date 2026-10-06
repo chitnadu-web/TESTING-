@@ -308,3 +308,79 @@
     font-size:34px;
   }
 }
+
+
+/* Final precision pass */
+:root{--container-max:1440px;--container-gutter:32px;--section-y:92px;--grid-gap:16px;--content-gap:70px}
+html{scroll-padding-top:100px}
+section[id]{scroll-margin-top:100px}
+button,input,select,textarea{font:inherit}
+img{max-width:100%}
+.container{width:min(var(--container-max),calc(100% - (var(--container-gutter)*2)));margin-inline:auto}
+.site-header{height:88px}
+.brand{flex:0 0 auto}
+.brand-logo{width:160px;height:64px}
+.nav{gap:24px;white-space:nowrap}
+.nav>a{line-height:1}
+.nav-cta{padding:13px 18px}
+.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr);gap:var(--content-gap)}
+.hero-copy,.hero-panel,.service-card,.contact-form{min-width:0}
+.hero h1{font-size:58px;line-height:1.08}
+.hero p{font-size:17px;line-height:1.7;margin:0;max-width:610px}
+.section{padding:var(--section-y) 0}
+.two-col,.section-head,.tech-wrap,.career-banner,.contact-grid{gap:var(--content-gap)}
+.section-head{margin-bottom:44px}
+.service-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--grid-gap)}
+.service-card{min-height:250px;padding:30px 22px;justify-content:flex-start}
+.service-icon{flex:0 0 48px;margin-bottom:22px}
+.service-card h3{min-height:48px;display:flex;align-items:flex-start;justify-content:center;margin-bottom:10px}
+.service-card p{min-height:63px}
+.industry-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--grid-gap)}
+.industry-grid article{min-width:0;min-height:210px;padding:30px 32px}
+.tech-cloud{gap:10px}
+.career-banner>.btn{justify-self:end;max-width:420px}
+.contact-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}
+.footer-grid{gap:38px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+@media(max-width:1200px){
+:root{--container-gutter:28px}
+.nav{gap:16px;font-size:12.5px}
+.nav-cta{padding:12px 15px}
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(360px,.82fr);gap:48px}
+.hero h1{font-size:54px}
+.service-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media(max-width:1050px){
+:root{--container-gutter:24px;--section-y:82px}
+.nav{gap:14px}
+.hero-grid,.two-col,.section-head,.tech-wrap,.career-banner,.contact-grid{grid-template-columns:1fr;gap:30px}
+.hero-copy{max-width:780px}
+.hero-panel{max-width:720px}
+.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.industry-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.career-banner>.btn{justify-self:start}
+}
+
+@media(max-width:720px){
+:root{--container-gutter:15px;--section-y:72px}
+.site-header{height:72px}
+.brand-logo{width:150px;height:58px}
+.nav{top:72px;gap:0}
+.nav>a{padding:13px 0}
+.nav-cta{padding:14px 16px}
+.hero{padding:72px 0 64px;min-height:auto}
+.hero h1{font-size:42px;line-height:1.08;letter-spacing:-1.1px}
+.hero p{font-size:16px;line-height:1.65}
+.hero-panel{padding:26px}
+.section h2{font-size:32px}
+.service-grid,.industry-grid,.contact-form-grid{grid-template-columns:1fr}
+.service-card{min-height:220px;padding:28px 22px}
+.service-card h3,.service-card p{min-height:0}
+.industry-grid article{min-height:180px;padding:26px}
+.tech-cloud{gap:8px}
+.tech-cloud span{min-height:48px;padding:12px 14px;font-size:13px}
+.career-banner>.btn{justify-self:stretch;max-width:none}
+.contact-copy h2{font-size:34px}
+}
